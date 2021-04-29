@@ -1,0 +1,11 @@
+{
+    "testData" : [
+        {
+            latitudeValue : 37.73728281049552,
+            longitudeValue : 128.89024026920865,
+            delta : 1,
+            title : "폴리텍대학 강릉캠퍼스",
+            subtitle :"강원도 강릉시 남산초교길 121"
+        },
+    ]
+}
