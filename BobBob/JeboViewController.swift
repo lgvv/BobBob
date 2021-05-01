@@ -7,8 +7,9 @@
 
 import UIKit
 import MobileCoreServices
+import MessageUI
 
-class JeboViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class JeboViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet var name: UITextField!
     @IBOutlet var jebo_addr: UITextField!
@@ -19,7 +20,13 @@ class JeboViewController: UIViewController, UINavigationControllerDelegate, UIIm
     var flagSave = false
     
     @IBAction func done(_ sender: Any) {
-        self.performSegue(withIdentifier: "unwind", sender: self)
+//        self.performSegue(withIdentifier: "unwind", sender: self)
+//        sendMail()
+        let alert = UIAlertController(title: "안내", message: "맛집 제보가 완료되었습니다. \n소중한 의견 감사합니다.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("확인", comment: "Default action"), style: .default, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func image_find(_ sender: Any) {
@@ -33,7 +40,6 @@ class JeboViewController: UIViewController, UINavigationControllerDelegate, UIIm
             
             present(imagePicker, animated: true, completion: nil)
         }
-        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -55,7 +61,32 @@ class JeboViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     override func viewDidLoad() {
         navigationController?.isNavigationBarHidden = false
-
-        
+        hideKeyboard()
     }
+    
+    func hideKeyboard() {   //다른 곳 터치시 키보드 숨기는 메소드
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() { // 다른 곳 터치시 키보드 숨기는 메소드
+        view.endEditing(true)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
+//    func sendMail() {
+//      if MFMailComposeViewController.canSendMail() {
+//        let mail = MFMailComposeViewController()
+//        mail.mailComposeDelegate = self;
+//        mail.setToRecipients(["jyp13.jyp@icloud.com"])
+//        mail.setSubject(name.text!)
+//        mail.setMessageBody(jebo_addr.text!, isHTML: false)
+//        let imageData : NSData = (self.img_preview.image ?? UIImage(named: "recommended"))!.pngData()! as NSData
+//        mail.addAttachmentData(imageData as Data, mimeType: "image/png", fileName: "imageName.png")
+//        self.present(mail, animated: true, completion: nil)
+//      }
+//    }
+    
+    
 }

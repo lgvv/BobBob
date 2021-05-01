@@ -15,13 +15,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var myMap: MKMapView!
     
     let locationManager = CLLocationManager()
+    var favorateList : [Int] = []
     
+    // 저장할 때
+    //let defaults = UserDefaults.standard
+    //defaults.set(favorateList, forKey: "jjimList")
+    
+    // 불러올 때
+    // let defaults = UserDefaults.standard
+    // let arr = defaults.array(forKey: "jjimList") as? [Int] ?? [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var test = json_test()
-        test.readJson()
-        
         // 내비게이션 바 숨김 처리
         self.navigationController?.navigationBar.isHidden = true
         
@@ -31,22 +35,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation() // 위치 업데이트 시작
         // 현재위치는 실제 디바이스가 아니면 시뮬레이터 - 피쳐 - 로케이션 - 커스텀 통해 설정해야 해
         myMap.showsUserLocation = true // 위치 보기 값을 트루로 설정
-        
-        /*
-        if let path = Bundle.main.path(forResource: "Data", ofType: "json") {
-            do {
-                  let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                  let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                  if let jsonResult = jsonResult as? Dictionary<String, AnyObject>, let person = jsonResult["person"] as? [Any] {
-                  }
-              } catch {
-              }
-        }
-        
-        for i in 1...9{
-            
-        }
-         */
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -61,7 +50,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     func goLocation(latitudeValue : CLLocationDegrees, longitudeValue : CLLocationDegrees, delta span : Double) -> CLLocationCoordinate2D {
         // 위도와 경도로 원하는 위치를 표시하기 위한 함수
-        
         
         let pLocation = CLLocationCoordinate2DMake(latitudeValue, longitudeValue) // 위도 값과 경도 값을 매개변수로 하여 함수호출하여 그것을 받는다.
         let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span) // 범위 값을 매개변수로 하여 함수를 호출하고 리턴값을 받는다

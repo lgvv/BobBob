@@ -10,10 +10,10 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    var restaurantIndex: Int?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+//        UINavigationBar.appearance().barTintColor = UIColor(red: 255/255, green: 170/255, blue: 0, alpha: 1)
         return true
     }
 

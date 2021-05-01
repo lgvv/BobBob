@@ -1,11 +1,122 @@
-{
-    "testData" : [
-        {
-            latitudeValue : 37.73728281049552,
-            longitudeValue : 128.89024026920865,
-            delta : 1,
-            title : "폴리텍대학 강릉캠퍼스",
-            subtitle :"강원도 강릉시 남산초교길 121"
-        },
-    ]
-}
+[
+    {
+        "index" : 0,
+        "name" : "정보를 불러올 수 없습니다.",
+        "address" :" ",
+        "latitudeValue" : 0,
+        "longitudeValue" : 0,
+        "delta" : 1,
+        "tier" : "nodata",
+        "cleanness" : "nodata",
+        "satisfaction": "nodata",
+        "history" : "nodata",
+        "overview" : "",
+        "curator" : "",
+        "business_hour" : ""
+    },
+    {
+        "index" : 1,
+        "name" : "폴리텍대학 강릉캠퍼스",
+        "address" :"강원도 강릉시 남산초교길 121",
+        "latitudeValue" : 37.73728281049552,
+        "longitudeValue" : 128.89024026920865,
+        "delta" : 1,
+        "tier" : "gold",
+        "cleanness" : "clean",
+        "satisfaction": "recommended",
+        "history" : "year",
+        "overview" : "",
+        "curator" : "",
+        "business_hour" : ""
+    },
+    {
+        "index" : 2,
+        "name" : "네이버 그린팩토리",
+        "address" :"경기도 성남시 분당구 정자동 불정로 6",
+        "latitudeValue" : 37.3594427,
+        "longitudeValue" : 127.1048104,
+        "delta" : 1,
+        "tier" : "gold",
+        "cleanness" : "clean",
+        "satisfaction": "not_recommended",
+        "history" : "no_year",
+        "overview" : "여기 가고싶다.",
+        "curator" : "Curator 박재영",
+        "business_hour" : "채용만 되면 풀야근 쌉가능"
+    },
+    {
+        "index" : 3,
+        "name" : "스타벅스 정자점",
+        "address" :"경기도 성남시 분당구 정자동 159-3번지",
+        "latitudeValue" : 37.36487741184691,
+        "longitudeValue" : 127.10625096339426,
+        "delta" : 1,
+        "tier" : "silver",
+        "cleanness" : "not_clean",
+        "satisfaction": "recommended",
+        "history" : "year",
+        "overview" : "네이버 본사 근처 스타벅스",
+        "curator" : "Curator 박재영",
+        "business_hour" : "매일 08:00 - 22:00"
+    },
+    {
+        "index" : 4,
+        "name" : "연어롭다",
+        "address" :"서울 마포구 동교로38길 42",
+        "latitudeValue" : 37.56111973729733,
+        "longitudeValue" : 126.92569608433571,
+        "delta" : 1,
+        "tier" : "gold",
+        "cleanness" : "not_clean",
+        "satisfaction": "recommended",
+        "history" : "year",
+        "overview" : "세상에 이런 연어는 없었다.",
+        "curator" : "Curator 이건우",
+        "business_hour" : "매일 12:00 - 02:00\n월요일 휴무"
+    },
+    {
+        "index" : 5,
+        "name" : "또보겠지떡볶이",
+        "address" :"서울 마포구 양화로19길 22-25",
+        "latitudeValue" : 37.55909627529171,
+        "longitudeValue" : 126.92436911162658,
+        "delta" : 1,
+        "tier" : "silver",
+        "cleanness" : "clean",
+        "satisfaction": "recommended",
+        "history" : "no_year",
+        "overview" : "다시 오고 싶은 떡볶이집",
+        "curator" : "Curator 박재영",
+        "business_hour" : "매일 11:30 - 21:00 월요일 휴무\nBreak 15:00~16:30 / 주말 No break"
+    },
+    {
+        "index" : 6,
+        "name" : "고창복의 착한갈비",
+        "address" :"서울 마포구 어울마당로 141",
+        "latitudeValue" : 37.55661709130695,
+        "longitudeValue" : 126.92546202696992,
+        "delta" : 1,
+        "tier" : "bronze",
+        "cleanness" : "not_clean",
+        "satisfaction": "not_recommended",
+        "history" : "year",
+        "overview" : "착한 가성비와 질 좋은 고기",
+        "curator" : "Curator 박재영",
+        "business_hour" : "매일 11:00 - 04:00"
+    },
+    {
+        "index" : 7,
+        "name" : "스트릿츄러스 홍대영풍문고점",
+        "address" :"서울 마포구 양화로 161 B2층 10호",
+        "latitudeValue" : 37.5570706902195,
+        "longitudeValue" : 126.92328987696993,
+        "delta" : 1,
+        "tier" : "silver",
+        "cleanness" : "clean",
+        "satisfaction": "not_recommended",
+        "history" : "no_year",
+        "overview" : "츄러스는 행복입니다. Lucky today!",
+        "curator" : "Curator 박재영",
+        "business_hour" : "매일 10:00 - 22:30"
+    }
+]

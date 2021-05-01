@@ -8,38 +8,44 @@
 import UIKit
 
 
-class JjimViewController: UITableViewController {
-        
-    //@IBOutlet var img: UIImageView!
-    
-    let cell = CellAttr()
-    
+class JjimViewController: UIViewController {
+    @IBOutlet weak var rtableView: UITableView!
+    let defaults = UserDefaults.standard
+    var favorateList : [RestaurantData] = []
+
     override func viewDidLoad() {
+        super.viewDidLoad()
         navigationController?.isNavigationBarHidden = false
-        
+        setList()
+        rtableView.dataSource = self
+        rtableView.delegate = self
+        rtableView.separatorStyle = .none// 테이블 사이의 구분선이 없어짐
+    }
     
+    func setList() {
+        let arr = defaults.array(forKey: "jjimList") as? [Int] ?? [Int]()
+        for i in arr {
+            favorateList.append(JsonHelper.RestaurantList[i])
+        }
+    }
+    
+}
 
+extension JjimViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return favorateList.count
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 // 우선 1인데 sql 활용하면서 바뀌어야 함
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = rtableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CellAttr
+        cell.img.image = UIImage(named: String(favorateList[indexPath.row].index))
+        cell.title.text = favorateList[indexPath.row].name
+        cell.addr.text = favorateList[indexPath.row].address
         
-
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 104 // 프로그래밍적으로 변경해야 할 경우 테이블 뷰의 높이
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 104
     }
-    
     
 }

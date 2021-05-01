@@ -9,8 +9,9 @@ import UIKit
 
 class CellAttr : UITableViewCell{
     
-    @IBOutlet var img: UIImageView!
-    @IBOutlet var title: UILabel!
-    @IBOutlet var addr: UILabel!
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var addr: UILabel!
+    
 }
 
