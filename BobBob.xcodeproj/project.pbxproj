@@ -26,6 +26,8 @@
 		B11744E72635DE6900FCD5C7 /* JeboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11744E62635DE6900FCD5C7 /* JeboViewController.swift */; };
 		B16D5A0126367E1900C2A1FB /* json_tset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D5A0026367E1900C2A1FB /* json_tset.swift */; };
 		B16D5A082636B80700C2A1FB /* CellAttr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D5A072636B80700C2A1FB /* CellAttr.swift */; };
+		B1EB3AE9263E78B700691D1D /* launchimg.png in Resources */ = {isa = PBXBuildFile; fileRef = B1EB3AE8263E78B700691D1D /* launchimg.png */; };
+		B1EB3AED263E79E500691D1D /* KakaoTalk_Photo_2021-05-02-15-10-23.png in Resources */ = {isa = PBXBuildFile; fileRef = B1EB3AEC263E79E500691D1D /* KakaoTalk_Photo_2021-05-02-15-10-23.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		B11744E62635DE6900FCD5C7 /* JeboViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeboViewController.swift; sourceTree = "<group>"; };
 		B16D5A0026367E1900C2A1FB /* json_tset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = json_tset.swift; sourceTree = "<group>"; };
 		B16D5A072636B80700C2A1FB /* CellAttr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAttr.swift; sourceTree = "<group>"; };
+		B1EB3AE8263E78B700691D1D /* launchimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchimg.png; sourceTree = "<group>"; };
+		B1EB3AEC263E79E500691D1D /* KakaoTalk_Photo_2021-05-02-15-10-23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KakaoTalk_Photo_2021-05-02-15-10-23.png"; sourceTree = "<group>"; };
 		FD2D47028198BDA7E1E50959 /* Pods_BobBob.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BobBob.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,6 +134,8 @@
 		B10EA41A2621EC4C0014A9C7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B1EB3AEC263E79E500691D1D /* KakaoTalk_Photo_2021-05-02-15-10-23.png */,
+				B1EB3AE8263E78B700691D1D /* launchimg.png */,
 				B10EA4172621EC3E0014A9C7 /* account.jpg */,
 			);
 			path = Resource;
@@ -194,6 +200,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1EB3AE9263E78B700691D1D /* launchimg.png in Resources */,
+				B1EB3AED263E79E500691D1D /* KakaoTalk_Photo_2021-05-02-15-10-23.png in Resources */,
 				B10EA4182621EC3E0014A9C7 /* account.jpg in Resources */,
 				B10EA40F2621D7000014A9C7 /* LaunchScreen.storyboard in Resources */,
 				B10EA40C2621D7000014A9C7 /* Assets.xcassets in Resources */,
