@@ -28,6 +28,7 @@ class NaverMapViewController: UIViewController, CLLocationManagerDelegate, UISea
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self // seach bar delegate
+        searchBar.searchTextField.backgroundColor = UIColor(cgColor: CGColor(red: 1, green: 1, blue: 1, alpha: 0.7))
         locationManager.delegate = self // 상수 로케이션 메니저의 델리게이트를 셀프로 설정
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 정확도를 최고로 설정
         locationManager.requestWhenInUseAuthorization() // 위치 데이터를 추적하기 위해 사용자에게 승인을 요구하는 코드
