@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,21 +12,16 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KakaoTalk_Photo_2021-05-02-15-10-23.png" translatesAutoresizingMaskIntoConstraints="NO" id="gOs-Rt-Hxj">
-                                <rect key="frame" x="24" y="147" width="335" height="397"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="KakaoTalk_Photo_2021-05-23-17-20-37.png" translatesAutoresizingMaskIntoConstraints="NO" id="C5R-uB-Ayc">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="1" green="0.71929663420000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="gOs-Rt-Hxj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="8M9-6q-Vnk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gOs-Rt-Hxj" secondAttribute="bottom" constant="123" id="bd7-cf-mAJ"/>
-                            <constraint firstItem="gOs-Rt-Hxj" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="nfg-h8-uPe"/>
-                            <constraint firstItem="gOs-Rt-Hxj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="147" id="okX-XT-w83"/>
-                        </constraints>
+                        <color key="backgroundColor" red="1" green="0.66666666669999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -35,6 +30,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="KakaoTalk_Photo_2021-05-02-15-10-23.png" width="273.1199951171875" height="399.3599853515625"/>
+        <image name="KakaoTalk_Photo_2021-05-23-17-20-37.png" width="287" height="602"/>
     </resources>
 </document>

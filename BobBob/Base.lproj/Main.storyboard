@@ -21,7 +21,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWZ-Uq-OaF">
-                                <rect key="frame" x="295" y="184" width="70" height="70"/>
+                                <rect key="frame" x="295" y="204" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="InY-Xx-tVs"/>
                                     <constraint firstAttribute="width" constant="70" id="TP4-pY-cFM"/>
@@ -32,7 +32,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zcC-Vz-5mu">
-                                <rect key="frame" x="295" y="274" width="70" height="70"/>
+                                <rect key="frame" x="295" y="294" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="9Wn-DW-KWn"/>
                                     <constraint firstAttribute="height" constant="70" id="m3D-Ik-sO3"/>
@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBh-yx-HqJ">
-                                <rect key="frame" x="295" y="94" width="70" height="70"/>
+                                <rect key="frame" x="295" y="114" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="TQo-Ya-gNV"/>
                                     <constraint firstAttribute="height" constant="70" id="pKm-A8-VyN"/>
@@ -56,7 +56,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aT7-oe-bfp">
-                                <rect key="frame" x="295" y="364" width="70" height="70"/>
+                                <rect key="frame" x="295" y="384" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="HwP-fk-s26"/>
                                     <constraint firstAttribute="width" constant="70" id="e6d-1O-fn0"/>
@@ -67,7 +67,7 @@
                                 </connections>
                             </button>
                             <searchBar contentMode="redraw" placeholder="검색할 장소를 입력해주세요" translatesAutoresizingMaskIntoConstraints="NO" id="S7u-hK-lsF">
-                                <rect key="frame" x="47" y="20" width="281" height="56"/>
+                                <rect key="frame" x="47" y="40" width="281" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -81,7 +81,7 @@
                             <constraint firstItem="aT7-oe-bfp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-10" id="9L8-tv-FTS"/>
                             <constraint firstAttribute="trailing" secondItem="xss-0W-0G5" secondAttribute="trailing" id="FFZ-Nf-eBJ"/>
                             <constraint firstItem="S7u-hK-lsF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="NUm-S1-vcB"/>
-                            <constraint firstItem="S7u-hK-lsF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="Prf-nl-JCy"/>
+                            <constraint firstItem="S7u-hK-lsF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="40" id="Prf-nl-JCy"/>
                             <constraint firstItem="zcC-Vz-5mu" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-10" id="RI4-1w-W2K"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="S7u-hK-lsF" secondAttribute="trailing" constant="47" id="T6a-Sq-Dh8"/>
                             <constraint firstItem="eWZ-Uq-OaF" firstAttribute="top" secondItem="oBh-yx-HqJ" secondAttribute="bottom" constant="20" id="TVq-S6-iBT"/>
