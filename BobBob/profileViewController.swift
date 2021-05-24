@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MobileCoreServices
 
-class profileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
+class profileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var profileImage: UIImageView!
     
@@ -33,34 +34,40 @@ class profileViewController: UIViewController, UINavigationControllerDelegate, U
         sheet.addAction(UIAlertAction(title: "취소", style: .cancel))
 
         sheet.addAction(UIAlertAction(title: "저장된 앨범", style: .default) { (_) in
-            selectLibrary(src: .savedPhotosAlbum) // 저장된 앨범에서 이미지 선택하기
+            self.selectLibrary(src: .savedPhotosAlbum) // 저장된 앨범에서 이미지 선택하기
             
         })
         
         sheet.addAction(UIAlertAction(title: "포토 라이브러리", style: .default) { (_) in
-            selectLibrary(src: .photoLibrary) // 포토 라이브러리에서 이미지 선택하기
+            self.selectLibrary(src: .photoLibrary) // 포토 라이브러리에서 이미지 선택하기
         })
         
         sheet.addAction(UIAlertAction(title: "카메라", style: .default) { (_) in
-            selectLibrary(src: .camera) // 카메라에서 이미지 촬영하기
+            self.selectLibrary(src: .camera) // 카메라에서 이미지 촬영하기
         })
         
         self.present(sheet, animated: false)
       
-        // 후반부) 전달된 소스 타입에 맞게 이미지 피커 창을 여는 내부 함수
-        func selectLibrary(src: UIImagePickerController.SourceType) {
-            if UIImagePickerController.isSourceTypeAvailable(src) {
-                let picker = UIImagePickerController()
-                picker.delegate = self
-                picker.allowsEditing = true
-          
-                self.present(picker, animated: false)
-            } else {
-                self.alert("사용할 수 없는 타입입니다.")
-            }
+    }
+    
+    // 후반부) 전달된 소스 타입에 맞게 이미지 피커 창을 여는 내부 함수
+    func selectLibrary(src: UIImagePickerController.SourceType) {
+        if UIImagePickerController.isSourceTypeAvailable(src) {
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.allowsEditing = true
+            //picker.delegate = self
+            picker.sourceType = .photoLibrary
+            picker.mediaTypes = [kUTTypeImage as String]
+            
+            //picker.allowsEditing = true
+            self.present(picker, animated: false)
+        } else {
+            self.alert("사용할 수 없는 타입입니다.")
         }
     }
     
+    /*
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // 사용자가 이미지를 클릭하였을 때 실행될 델리게이트 메소드
         let rawVal = UIImagePickerController.InfoKey.originalImage.rawValue
@@ -71,6 +78,25 @@ class profileViewController: UIViewController, UINavigationControllerDelegate, U
         
         self.dismiss(animated: true)
     }
+    */
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
+        
+        if mediaType.isEqual(to: kUTTypeImage as NSString as String) {
+            captureImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            
+            if flagSave {
+                UIImageWriteToSavedPhotosAlbum(captureImage,nil,nil,nil)
+            }
+        }
+        
+        profileImage.image = captureImage
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     
     func alert(_ message : String, completion : (()->Void)? = nil) {
         
