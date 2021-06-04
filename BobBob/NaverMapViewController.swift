@@ -13,14 +13,55 @@ class NaverMapViewController: UIViewController, CLLocationManagerDelegate, UISea
     @IBOutlet weak var naverMap: NMFMapView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    let locationManager = CLLocationManager()
+    var locationManager: CLLocationManager = CLLocationManager()
+    var currentLocation: CLLocation!
     var places: [hotplace] = []
+    
     struct hotplace {
         let name: String
         let lat: Double
         let lng: Double
     }
-
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager = manager
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            currentLocation = locationManager.location
+        }
+    }
+    
+    // MARK : 위치 허용 선택했을 때 처리
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined :
+            manager.requestWhenInUseAuthorization()
+            break
+        case .authorizedWhenInUse:
+            self.firstSetting()
+            break
+        case .authorizedAlways:
+            self.firstSetting()
+            break
+        case .restricted :
+            break
+        case .denied :
+            break
+        default:
+            break
+        }
+    }
+    
+    func firstSetting(){
+        self.currentLocation = locationManager.location
+        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: currentLocation.coordinate.latitude, lng: currentLocation.coordinate.longitude))
+        naverMap.moveCamera(cameraUpdate) // 위치 업데이트
+        naverMap.positionMode = .direction // 위치 추적 모드
+        hardCoding() // 검색 가능 좌표 하드코딩
+        for r in JsonHelper.RestaurantList {    // 화면에 식당 표시
+            setPoint(data: r)
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){ //다른 곳 터치시 키보드 숨기는 메소드
          self.view.endEditing(true)
    }
@@ -33,18 +74,34 @@ class NaverMapViewController: UIViewController, CLLocationManagerDelegate, UISea
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 정확도를 최고로 설정
         locationManager.requestWhenInUseAuthorization() // 위치 데이터를 추적하기 위해 사용자에게 승인을 요구하는 코드
         locationManager.startUpdatingLocation() // 위치 업데이트 시작
-        let coor = locationManager.location?.coordinate
-        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: coor!.latitude, lng: coor!.longitude))
-        naverMap.moveCamera(cameraUpdate) // 위치 업데이트
-        naverMap.positionMode = .direction // 위치 추적 모드
-        hardCoding() // 검색 가능 좌표 하드코딩
-        for r in JsonHelper.RestaurantList {    // 화면에 식당 표시
-            setPoint(data: r)
-        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+        
+        if CLLocationManager.locationServicesEnabled() {
+            if CLLocationManager.authorizationStatus() == .denied || CLLocationManager.authorizationStatus() == .restricted {
+                let alert = UIAlertController(title: "오류 발생", message: "위치 서비스 기능이 꺼져있음", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                locationManager.delegate = self
+                locationManager.requestWhenInUseAuthorization()
+            }
+        } else {
+            let alert = UIAlertController(title: "오류 발생", message: "위치 서비스 제공 불가", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        // 이미 허용인 경우 처리
+        if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            self.firstSetting()
+        }
     }
     
     func setPoint(data: RestaurantData) {
