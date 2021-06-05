@@ -14,6 +14,7 @@ class JeboViewController: UIViewController, UINavigationControllerDelegate, UIIm
     @IBOutlet var name: UITextField!
     @IBOutlet var jebo_addr: UITextField!
     @IBOutlet var img_preview: UIImageView!
+    @IBOutlet weak var button: UIButton!
     
     let imagePicker : UIImagePickerController! = UIImagePickerController()
     var captureImage : UIImage!
@@ -62,6 +63,11 @@ class JeboViewController: UIViewController, UINavigationControllerDelegate, UIIm
     override func viewDidLoad() {
         navigationController?.isNavigationBarHidden = false
         hideKeyboard()
+        
+        button.backgroundColor = .systemBlue
+        button.setTitle("이미지 추가하기", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        
     }
     
     func hideKeyboard() {   //다른 곳 터치시 키보드 숨기는 메소드

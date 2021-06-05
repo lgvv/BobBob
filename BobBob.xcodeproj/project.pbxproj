@@ -28,7 +28,10 @@
 		B11744E72635DE6900FCD5C7 /* JeboViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11744E62635DE6900FCD5C7 /* JeboViewController.swift */; };
 		B16D5A0126367E1900C2A1FB /* json_tset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D5A0026367E1900C2A1FB /* json_tset.swift */; };
 		B16D5A082636B80700C2A1FB /* CellAttr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D5A072636B80700C2A1FB /* CellAttr.swift */; };
+		B1D05959266BBF3A0079EEBE /* CustomBookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D05958266BBF3A0079EEBE /* CustomBookmark.swift */; };
+		B1D0595C266BC1CA0079EEBE /* CSCellAttr.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D0595B266BC1CA0079EEBE /* CSCellAttr.swift */; };
 		B1EB3AED263E79E500691D1D /* KakaoTalk_Photo_2021-05-02-15-10-23.png in Resources */ = {isa = PBXBuildFile; fileRef = B1EB3AEC263E79E500691D1D /* KakaoTalk_Photo_2021-05-02-15-10-23.png */; };
+		B1FD4758266BDB700007951D /* CSaddPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FD4757266BDB700007951D /* CSaddPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +59,10 @@
 		B11744E62635DE6900FCD5C7 /* JeboViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeboViewController.swift; sourceTree = "<group>"; };
 		B16D5A0026367E1900C2A1FB /* json_tset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = json_tset.swift; sourceTree = "<group>"; };
 		B16D5A072636B80700C2A1FB /* CellAttr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAttr.swift; sourceTree = "<group>"; };
+		B1D05958266BBF3A0079EEBE /* CustomBookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBookmark.swift; sourceTree = "<group>"; };
+		B1D0595B266BC1CA0079EEBE /* CSCellAttr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSCellAttr.swift; sourceTree = "<group>"; };
 		B1EB3AEC263E79E500691D1D /* KakaoTalk_Photo_2021-05-02-15-10-23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KakaoTalk_Photo_2021-05-02-15-10-23.png"; sourceTree = "<group>"; };
+		B1FD4757266BDB700007951D /* CSaddPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSaddPage.swift; sourceTree = "<group>"; };
 		FD2D47028198BDA7E1E50959 /* Pods_BobBob.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BobBob.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -129,6 +135,9 @@
 				4EEBAFD1263BC0F700420C22 /* RestaurantData.swift */,
 				4E08C7AF263C13E700A85A5E /* NaverMapViewController.swift */,
 				4E08C7B5263C230000A85A5E /* RestaurantDetailViewController.swift */,
+				B1D05958266BBF3A0079EEBE /* CustomBookmark.swift */,
+				B1D0595B266BC1CA0079EEBE /* CSCellAttr.swift */,
+				B1FD4757266BDB700007951D /* CSaddPage.swift */,
 			);
 			path = BobBob;
 			sourceTree = "<group>";
@@ -264,11 +273,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B10EA4072621D7000014A9C7 /* ViewController.swift in Sources */,
+				B1D0595C266BC1CA0079EEBE /* CSCellAttr.swift in Sources */,
 				B10EA4032621D7000014A9C7 /* AppDelegate.swift in Sources */,
 				4EEBAFD2263BC0F700420C22 /* RestaurantData.swift in Sources */,
 				B11744E72635DE6900FCD5C7 /* JeboViewController.swift in Sources */,
 				4EEBAFDD263BC9BB00420C22 /* JjimViewController.swift in Sources */,
+				B1FD4758266BDB700007951D /* CSaddPage.swift in Sources */,
 				B16D5A0126367E1900C2A1FB /* json_tset.swift in Sources */,
+				B1D05959266BBF3A0079EEBE /* CustomBookmark.swift in Sources */,
 				4E08C7BE263C5A7C00A85A5E /* MapViewController.swift in Sources */,
 				4E08C7B6263C230000A85A5E /* RestaurantDetailViewController.swift in Sources */,
 				B10EA4052621D7000014A9C7 /* SceneDelegate.swift in Sources */,
