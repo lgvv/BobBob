@@ -65,9 +65,9 @@ class JeboViewController: UIViewController, UINavigationControllerDelegate, UIIm
         navigationController?.hidesBarsOnTap = false
         hideKeyboard()
         
-        button.backgroundColor = .systemBlue
-        button.setTitle("이미지 추가하기", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        //button.backgroundColor = .systemBlue
+        //button.setTitle("이미지 추가하기", for: .normal)
+        //button.setTitleColor(.white, for: .normal)
         
     }
     

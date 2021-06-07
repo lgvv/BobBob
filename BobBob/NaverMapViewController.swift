@@ -13,9 +13,18 @@ class NaverMapViewController: UIViewController, CLLocationManagerDelegate, UISea
     @IBOutlet weak var naverMap: NMFMapView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+
+    @IBOutlet weak var profileBtn: UIButton!
+    @IBOutlet weak var recommendBtn: UIButton!
+    @IBOutlet weak var bookmarkBtn: UIButton!
+    @IBOutlet weak var refreshBtn: UIButton!
+    
+    let ad = UIApplication.shared.delegate as? AppDelegate
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation!
     var places: [hotplace] = []
+    var right: [NSLayoutConstraint] = []
+    var left: [NSLayoutConstraint] = []
     
     struct hotplace {
         let name: String
@@ -74,7 +83,7 @@ class NaverMapViewController: UIViewController, CLLocationManagerDelegate, UISea
         locationManager.desiredAccuracy = kCLLocationAccuracyBest // 정확도를 최고로 설정
         locationManager.requestWhenInUseAuthorization() // 위치 데이터를 추적하기 위해 사용자에게 승인을 요구하는 코드
         locationManager.startUpdatingLocation() // 위치 업데이트 시작
-
+        initSwitch()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,6 +110,27 @@ class NaverMapViewController: UIViewController, CLLocationManagerDelegate, UISea
         // 이미 허용인 경우 처리
         if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             self.firstSetting()
+        }
+        switchHand()
+    }
+    
+    func initSwitch() {
+        right = [profileBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15), recommendBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15), bookmarkBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15), refreshBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+        ]
+        left = [profileBtn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15), recommendBtn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15), bookmarkBtn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15), refreshBtn.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+        ]
+    }
+    
+    func switchHand() {
+        let leftHandFlag = ad?.left_handed ?? false
+        NSLayoutConstraint.deactivate(left)
+        NSLayoutConstraint.deactivate(right)
+
+        if leftHandFlag { //오른손모드 -> 왼손모드
+            NSLayoutConstraint.activate(left)
+        }
+        else { //왼손모드 -> 오른손모드
+            NSLayoutConstraint.activate(right)
         }
     }
     

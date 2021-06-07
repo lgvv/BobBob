@@ -11,6 +11,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var restaurantIndex: Int?
+    var left_handed: Bool?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 //        UINavigationBar.appearance().barTintColor = UIColor(red: 255/255, green: 170/255, blue: 0, alpha: 1)

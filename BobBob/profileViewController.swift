@@ -11,11 +11,15 @@ import MobileCoreServices
 class profileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var isLeft: UILabel!
+    @IBOutlet weak var leftHandSwitch: UISwitch!
     
+    var handFlag : Bool!
     let imagePicker : UIImagePickerController! = UIImagePickerController()
     var captureImage : UIImage!
     var flagSave = false
-    
+    let ad = UIApplication.shared.delegate as? AppDelegate
+
     override func viewDidLoad() {
         navigationController?.isNavigationBarHidden = true
         navigationController?.hidesBarsOnTap = false
@@ -25,14 +29,46 @@ class profileViewController: UIViewController, UINavigationControllerDelegate, U
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tappedProfile(_:)))
         self.profileImage.addGestureRecognizer(gesture)
-        
+        leftHandSwitch.onTintColor = .orange
+        handFlag = ad?.left_handed ?? false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.profileImage.layer.cornerRadius = self.profileImage.frame.width / 2
         self.profileImage.layer.borderWidth = 0
         self.profileImage.layer.masksToBounds = true
-        print("asd")
+        if let image = getSavedImage(named: "handsome.png") {
+            captureImage = image
+        }
+        leftHandSwitch.isOn = handFlag
+        setSwitch()
+    }
+    
+    @IBAction func toggleSwitch(_ sender: Any) {
+        ad?.left_handed = !handFlag
+        handFlag = !handFlag
+        setSwitch()
+    }
+    
+    func getSavedImage(named: String) -> UIImage? {
+        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+            return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(named).path)
+        }
+        return nil
+    }
+    
+    
+    func setSwitch() {
+
+        if handFlag {
+            isLeft.text = "왼손모드: 켬"
+        }
+        else {
+            isLeft.text = "왼손모드: 끔"
+        }
+        let coloredStr = NSMutableAttributedString(string: isLeft.text!)
+        coloredStr.addAttribute(.foregroundColor, value: UIColor.black, range: (isLeft.text! as NSString).range(of: "왼손모드:"))
+        isLeft.attributedText = coloredStr
     }
     
     @objc func tappedProfile(_ sender: Any) {
@@ -98,7 +134,21 @@ class profileViewController: UIViewController, UINavigationControllerDelegate, U
         picker.dismiss(animated: true, completion: nil)
     }
     
-   
+    func saveImage(image: UIImage) -> Bool {
+        guard let data = image.jpegData(compressionQuality: 1) ?? image.pngData() else {
+            return false
+        }
+        guard let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as NSURL else {
+            return false
+        }
+        do {
+            try data.write(to: directory.appendingPathComponent("handsome.png")!)
+            return true
+        } catch {
+            print(error.localizedDescription)
+            return false
+        }
+    }
     
     
     
