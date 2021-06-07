@@ -62,6 +62,7 @@ class JeboViewController: UIViewController, UINavigationControllerDelegate, UIIm
     
     override func viewDidLoad() {
         navigationController?.isNavigationBarHidden = false
+        navigationController?.hidesBarsOnTap = false
         hideKeyboard()
         
         button.backgroundColor = .systemBlue

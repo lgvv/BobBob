@@ -16,7 +16,7 @@ class JjimViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = false
-        navigationController?.hidesBarsOnTap = false
+        navigationController?.hidesBarsOnTap = true
         
         setList()
         rtableView.dataSource = self

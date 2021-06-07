@@ -12,6 +12,7 @@
         <!--BOBBOB-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MapViewControllerVC" id="BYZ-38-t0r" customClass="NaverMapViewController" customModule="BobBob" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -99,7 +100,6 @@
                         <outlet property="searchBar" destination="S7u-hK-lsF" id="eOs-y2-dS5"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="960" y="92.957746478873247"/>
         </scene>
@@ -111,26 +111,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="account.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jdx-FL-7Dj">
-                                <rect key="frame" x="137" y="65" width="101" height="120"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="account.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="jdx-FL-7Dj">
+                                <rect key="frame" x="115" y="65" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Xld-Ss-uGf"/>
+                                    <constraint firstAttribute="width" constant="120" id="c54-OE-Km3"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계정 : Team5@konkuk.ac.kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DA1-bt-mu7">
-                                <rect key="frame" x="29" y="256" width="206" height="20.5"/>
+                                <rect key="frame" x="29" y="268" width="206" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가입일: 2020 - 04 - 26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2j-5J-xqx">
-                                <rect key="frame" x="29" y="276.5" width="167" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="8YI-95-fnW"/>
-                                </constraints>
+                                <rect key="frame" x="29" y="297" width="167" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="버전 : 1.0.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXd-IE-oLU">
-                                <rect key="frame" x="29" y="316.5" width="75" height="20.5"/>
+                                <rect key="frame" x="29" y="326" width="75" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -139,19 +140,20 @@
                         <viewLayoutGuide key="safeArea" id="6sh-IL-9So"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="a2j-5J-xqx" firstAttribute="leading" secondItem="6sh-IL-9So" secondAttribute="leading" constant="29" id="2eJ-qk-12G"/>
-                            <constraint firstItem="6sh-IL-9So" firstAttribute="trailing" secondItem="DA1-bt-mu7" secondAttribute="trailing" constant="140" id="3PQ-2q-L9s"/>
-                            <constraint firstItem="jdx-FL-7Dj" firstAttribute="top" relation="lessThanOrEqual" secondItem="6sh-IL-9So" secondAttribute="top" constant="73" id="F2v-oz-Czh"/>
-                            <constraint firstItem="6sh-IL-9So" firstAttribute="bottom" secondItem="hXd-IE-oLU" secondAttribute="bottom" constant="330" id="Fd6-uP-132"/>
-                            <constraint firstItem="a2j-5J-xqx" firstAttribute="top" secondItem="DA1-bt-mu7" secondAttribute="bottom" id="IPz-xy-1lY"/>
-                            <constraint firstItem="jdx-FL-7Dj" firstAttribute="leading" secondItem="6sh-IL-9So" secondAttribute="leading" constant="137" id="Thq-Ay-UjY"/>
-                            <constraint firstItem="hXd-IE-oLU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a2j-5J-xqx" secondAttribute="leading" id="VLN-lN-BE6"/>
-                            <constraint firstItem="hXd-IE-oLU" firstAttribute="top" secondItem="a2j-5J-xqx" secondAttribute="bottom" id="Ygq-ZK-v5a"/>
-                            <constraint firstItem="jdx-FL-7Dj" firstAttribute="centerX" secondItem="CRH-NV-sCJ" secondAttribute="centerX" id="baf-9N-szt"/>
-                            <constraint firstItem="DA1-bt-mu7" firstAttribute="top" secondItem="jdx-FL-7Dj" secondAttribute="bottom" constant="71" id="crH-9n-RvL"/>
-                            <constraint firstItem="6sh-IL-9So" firstAttribute="trailing" secondItem="hXd-IE-oLU" secondAttribute="trailing" constant="271" id="nLF-KV-q4f"/>
-                            <constraint firstItem="a2j-5J-xqx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DA1-bt-mu7" secondAttribute="leading" id="rSL-Uf-9Hc"/>
-                            <constraint firstItem="6sh-IL-9So" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="a2j-5J-xqx" secondAttribute="trailing" id="tbD-n5-uEf"/>
+                            <constraint firstItem="a2j-5J-xqx" firstAttribute="leading" secondItem="6sh-IL-9So" secondAttribute="leading" constant="29" id="0Mq-hL-RlE"/>
+                            <constraint firstItem="DA1-bt-mu7" firstAttribute="leading" secondItem="6sh-IL-9So" secondAttribute="leading" constant="29" id="1wp-3E-kWz"/>
+                            <constraint firstItem="jdx-FL-7Dj" firstAttribute="leading" secondItem="6sh-IL-9So" secondAttribute="leading" constant="115" id="89E-Li-Udk"/>
+                            <constraint firstItem="jdx-FL-7Dj" firstAttribute="top" secondItem="6sh-IL-9So" secondAttribute="top" constant="21" id="8pd-KX-uem"/>
+                            <constraint firstItem="hXd-IE-oLU" firstAttribute="leading" secondItem="6sh-IL-9So" secondAttribute="leading" constant="29" id="UWV-zL-avc"/>
+                            <constraint firstItem="a2j-5J-xqx" firstAttribute="top" secondItem="DA1-bt-mu7" secondAttribute="bottom" constant="8" symbolic="YES" id="a5c-4I-AQ6"/>
+                            <constraint firstItem="6sh-IL-9So" firstAttribute="trailing" secondItem="jdx-FL-7Dj" secondAttribute="trailing" constant="140" id="bIz-4a-HE5"/>
+                            <constraint firstItem="DA1-bt-mu7" firstAttribute="top" secondItem="jdx-FL-7Dj" secondAttribute="bottom" constant="83" id="cBf-ac-n8e"/>
+                            <constraint firstItem="6sh-IL-9So" firstAttribute="bottom" secondItem="hXd-IE-oLU" secondAttribute="bottom" constant="320" id="fXN-gR-sOL"/>
+                            <constraint firstItem="6sh-IL-9So" firstAttribute="trailing" secondItem="DA1-bt-mu7" secondAttribute="trailing" constant="140" id="sN8-uR-q1B"/>
+                            <constraint firstItem="6sh-IL-9So" firstAttribute="trailing" secondItem="hXd-IE-oLU" secondAttribute="trailing" constant="271" id="tHe-Qf-eV0"/>
+                            <constraint firstItem="6sh-IL-9So" firstAttribute="trailing" secondItem="a2j-5J-xqx" secondAttribute="trailing" constant="179" id="ub3-JR-rRg"/>
+                            <constraint firstItem="hXd-IE-oLU" firstAttribute="top" secondItem="a2j-5J-xqx" secondAttribute="bottom" constant="8" symbolic="YES" id="vLI-R3-hvA"/>
+                            <constraint firstItem="hXd-IE-oLU" firstAttribute="top" secondItem="a2j-5J-xqx" secondAttribute="bottom" constant="8" symbolic="YES" id="x54-w5-u2G"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="프로필" id="pu4-eV-eOH"/>
@@ -161,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7S-Zn-vnJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1800.8" y="-182.51231527093597"/>
+            <point key="canvasLocation" x="1800.8" y="-183.05847076461771"/>
         </scene>
         <!--제보합니다-->
         <scene sceneID="oQ3-g5-xsO">
