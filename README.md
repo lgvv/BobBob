@@ -1,6 +1,10 @@
-# BobBob
+# [HCI 5조] 
 
-2021-1학기 HCI(인간과컴퓨터상호작용)팀 프로젝트
+## BobBob 서비스 소개
+ - 광고없는 진짜 맛집 리뷰를 제공하기 위한 앱
+
+![main image]
+
 
 영상 링크 : https://youtu.be/BJVbuIcuKOQ
 
