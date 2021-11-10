@@ -8,4 +8,6 @@
 
 영상 링크 : https://youtu.be/BJVbuIcuKOQ
 
+개발 일지 : https://rldd.tistory.com/238
+
 완성본
